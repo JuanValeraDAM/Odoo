@@ -1,5 +1,5 @@
 from odoo import fields, models, api
-
+#TODO: El cdu dice que ValueError: dictionary update sequence element #0 has length 9; 2 is required
 
 class ModelName(models.Model):
     _name = 'milibro.cdu'
@@ -12,7 +12,7 @@ class ModelName(models.Model):
     def name_get(self):
         lista = []
         for r in self:
-            lista.append((r.name)+"-"+r.description)
+            lista.append((r.id,r.name+"-"+r.description))
         return lista
 
     @api.model
