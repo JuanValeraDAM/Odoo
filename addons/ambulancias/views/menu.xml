@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Ambulancias" id="ambulancias_menu_root"/>
+        <menuitem name="Auxiliares" id="ambulancias_auxiliares" parent="ambulancias_menu_root"/>
+        <menuitem name="Vehiculo" id="ambulancias.vehiculos_form" parent="ambulancias_auxiliares" action="ambulancias.vehiculos_action_window"/>
+        <menuitem name="Marca" id="ambulancias.marcas_form" parent="ambulancias_auxiliares" action="ambulancias.marcas_action_window"/>
+        <menuitem name="Mantenimiento" id="ambulancias.mantenimientos_form" parent="ambulancias_auxiliares" action="ambulancias.mantenimientos_action_window"/>
+        <menuitem name="MantenimientoLinea" id="ambulancias.mantenimientos_lineas_form" parent="ambulancias_auxiliares" action="ambulancias.mantenimiento_lineas_action_window"/>
+        <menuitem name="Modelo" id="ambulancias.modelos_form" parent="ambulancias_auxiliares" action="ambulancias.modelos_action_window"/>
+        <menuitem name="Partner" id="ambulancias.partners_form" parent="ambulancias_auxiliares" action="ambulancias.partners_action_window"/>
+        <menuitem name="Repostaje" id="ambulancias.repostajes_form" parent="ambulancias_auxiliares" action="ambulancias.repostajes_action_window"/>
+    </data>
+</odoo>

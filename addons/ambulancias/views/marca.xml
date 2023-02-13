@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ambulancias_marca_form" model="ir.ui.view">
+            <field name="name">ambulancias.marca.form</field>
+            <field name="model">ambulancias.marca</field>
+            <field name="arch" type="xml">
+                <form string="Marca">
+                    <sheet>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ambulancias_marca_tree" model="ir.ui.view">
+            <field name="name">ambulancias.marca.tree</field>
+            <field name="model">ambulancias.marca</field>
+            <field name="arch" type="xml">
+                <tree string="Marca">
+                </tree>
+            </field>
+        </record>
+
+        <record id="ambulancias_marca_search" model="ir.ui.view">
+            <field name="name">ambulancias.marca.search</field>
+            <field name="model">ambulancias.marca</field>
+            <field name="arch" type="xml">
+                <search string="Marca">
+
+                </search>
+            </field>
+        </record>
+
+        <record id="ambulancias.marcas_action_window" model="ir.actions.act_window">
+            <field name="name">Marca</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ambulancias.marca</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Vehiculo.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

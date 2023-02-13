@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--TODO:Las tres pestañas de arriba: Creando, Prestado y Devuelto-->
+        <record id="milibro_prestamo_form" model="ir.ui.view">
+            <field name="name">milibro.prestamo.form</field>
+            <field name="model">milibro.prestamo</field>
+            <field name="arch" type="xml">
+
+                <form string="Prestamo">
+
+                        <div class="o_statusbar_status o_field_widget o_readonly_modifier" name="state"
+                             data-original-title=""
+                             title="">
+                            <button name="devuelto_button" type="button" data-value="assigned" disabled="disabled"
+                                    title="Estado no activo"
+                                    aria-checked="false" role="radio"
+                                    class="btn o_arrow_button btn-secondary disabled ">
+                                Devuelto
+                            </button>
+                            <button name="prestado_button" type="button" data-value="confirmed" disabled="disabled"
+                                    title="Estado no activo"
+                                    aria-checked="false" role="radio"
+                                    class="btn o_arrow_button btn-secondary disabled ">
+                                Prestado
+                            </button>
+                            <button name="creando_button" type="button" data-value="draft" disabled="disabled"
+                                    title="Estado actual"
+                                    aria-checked="true" role="radio" class="btn o_arrow_button btn-primary disabled "
+                                    aria-current="step">
+                                Creando
+                            </button>
+                        </div>
+
+                    <sheet>
+                        <group>
+                            <field name="usuario"/>
+                            <field name="autor_id"/>
+                            <field name="libro_id" domain="[('autor_id','=?',autor_id)]" store="True"/>
+                            <field name="ejemplar_id" domain="[('libro_id','=?',libro_id)]" store="True"/>
+                            <field name="fecha_iniprestamo"/>
+                            <field name="fecha_finprestamo"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="milibro_prestamo_tree" model="ir.ui.view">
+            <field name="name">milibro.prestamo.tree</field>
+            <field name="model">milibro.prestamo</field>
+            <field name="arch" type="xml">
+                <tree string="Prestamo">
+                    <field name="fecha_finprestamo"/>
+                    <field name="fecha_iniprestamo"/>
+                    <field name="fecha_devolucion"/>
+                    <field name="estado"/>
+                    <field name="ejemplar_id"/>
+                    <field name="usuario"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="milibro_prestamo_search_view" model="ir.ui.view">
+            <field name="name">milibro.prestamo.search</field>
+            <field name="model">milibro.prestamo</field>
+            <field name="arch" type="xml">
+                <search string="Prestamo">
+                    <field name="usuario"/>
+                    <field name="ejemplar_id"/>
+                    <group>
+                        <filter name="por_fecha_finprestamo" string="Agrupar por fecha fin de prestamo"
+                                context="{'group_by':'fecha_finprestamo'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="milibro.prestamos_action_window" model="ir.actions.act_window">
+            <field name="name">prestamo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">milibro.prestamo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

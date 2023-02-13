@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="milibro_autor_form" model="ir.ui.view">
+            <field name="name">milibro.autor.form</field>
+            <field name="model">milibro.autor</field>
+            <field name="arch" type="xml">
+                <form string="Autor">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="cantidad_libros_escritos_button" type="button" icon="fa-list">
+                                <field string="Libros" name="cantidad_libros_escritos"/>
+                            </button>
+                        </div>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="apellidos"/>
+                        </group>
+                        <notebook>
+                            <page string="Libros">
+                                <tree>
+                                    <field name="libro_ids" context="{'default_autor_id':active_id}"/>
+                                </tree>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="milibro_autor_tree" model="ir.ui.view">
+            <field name="name">milibro.autor.tree</field>
+            <field name="model">milibro.autor</field>
+            <field name="arch" type="xml">
+                <tree string="autor">
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="cantidad_libros_escritos"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="milibro_autor_search_view" model="ir.ui.view">
+            <field name="name">milibro.autor.search</field>
+            <field name="model">milibro.autor</field>
+            <field name="arch" type="xml">
+                <search string="Autor">
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="milibro.autores_action_window" model="ir.actions.act_window">
+            <field name="name">Autores</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">milibro.autor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new ModelTitle.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

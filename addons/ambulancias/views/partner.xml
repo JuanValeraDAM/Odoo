@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ambulancias_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form string="Partner">
+                    <sheet>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ambulancias_partner_tree" model="ir.ui.view">
+            <field name="name">res.partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree string="Partner">
+                </tree>
+            </field>
+        </record>
+
+        <record id="ambulancias_partner_search" model="ir.ui.view">
+            <field name="name">res.partner.search</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Líneas de mantenimiento">
+
+                </search>
+            </field>
+        </record>
+
+        <record id="ambulancias.partners_action_window" model="ir.actions.act_window">
+            <field name="name">Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Vehiculo.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

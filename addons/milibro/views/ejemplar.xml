@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="milibro_ejemplar_form" model="ir.ui.view">
+            <field name="name">milibro.ejemplar.form</field>
+            <field name="model">milibro.ejemplar</field>
+            <field name="arch" type="xml">
+                <form string="Ejemplar">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="situacion"/>
+                            <field name="estado"/>
+                            <field name="libro_id" invisible="True"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="milibro_ejemplar_tree" model="ir.ui.view">
+            <field name="name">milibro.ejemplar.tree</field>
+            <field name="model">milibro.ejemplar</field>
+            <field name="arch" type="xml">
+                <tree string="Ejemplar" decoration-danger="estado=='3'" decoration-warning="estado=='2'" editable="bottom">
+                    <field name="name"/>
+                    <field name="situacion"/>
+                    <field name="estado"/>
+                    <field name="libro_id" context="{'default_libro_id':active_id}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--  <record id="ModelName_search_view" model="ir.ui.view">
+              <field name="name">ProjectName.ModelName.search</field>
+              <field name="model">ProjectName.ModelName</field>
+              <field name="arch" type="xml">
+                  <search string="ModelTitle">
+                      <group expand="1" string="Group By">
+                          <filter string="Example Field" name="example_field" domain="[]"
+                                  context="{'group_by':'example_field'}"/>
+                      </group>
+                  </search>
+              </field>
+          </record>-->
+
+        <record id="milibro.ejemplares_action_window" model="ir.actions.act_window">
+            <field name="name">ejemplar</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">milibro.ejemplar</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

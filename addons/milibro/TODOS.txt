@@ -1,0 +1,1 @@
+El editable="bottom" de categoría no funciona y no tengo ni idea de por qué.

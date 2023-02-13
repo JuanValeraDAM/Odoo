@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ambulancias_mantenimiento_form" model="ir.ui.view">
+            <field name="name">ambulancias.mantenimiento.form</field>
+            <field name="model">ambulancias.mantenimiento</field>
+            <field name="arch" type="xml">
+                <form string="Mantenimiento">
+                    <sheet>
+                        <group>
+                            <field name="km"/>
+                            <field name="fecha"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ambulancias_mantenimiento_tree" model="ir.ui.view">
+            <field name="name">ambulancias.mantenimiento.tree</field>
+            <field name="model">ambulancias.mantenimiento</field>
+            <field name="arch" type="xml">
+                <tree string="Mantenimiento">
+                    <field name="km"/>
+                    <field name="fecha"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ambulancias_mantenimiento_search" model="ir.ui.view">
+            <field name="name">ambulancias.mantenimiento.search</field>
+            <field name="model">ambulancias.mantenimiento</field>
+            <field name="arch" type="xml">
+                <search string="Mantenimiento">
+                </search>
+            </field>
+        </record>
+
+        <record id="ambulancias.mantenimientos_action_window" model="ir.actions.act_window">
+            <field name="name">Mantenimiento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ambulancias.mantenimiento</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

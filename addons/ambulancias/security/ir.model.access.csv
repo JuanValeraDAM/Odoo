@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ambulancias_vehiculo,Permisos usuario interno,model_ambulancias_vehiculo,base.group_user,1,1,1,1
+access_ambulancias_marca,Permisos usuario interno,model_ambulancias_marca,base.group_user,1,1,1,1
+access_ambulancias_mantenimiento,Permisos usuario interno,model_ambulancias_mantenimiento,base.group_user,1,1,1,1
+access_ambulancias_mantenimiento_linea,Permisos usuario interno,model_ambulancias_mantenimiento_linea,base.group_user,1,1,1,1
+access_ambulancias_modelo,Permisos usuario interno,model_ambulancias_modelo,base.group_user,1,1,1,1
+access_ambulancias_partner,Permisos usuario interno,model_res_partner,base.group_user,1,1,1,1
+access_ambulancias_repostaje,Permisos usuario interno,model_ambulancias_repostaje,base.group_user,1,1,1,1
+
+
+
+

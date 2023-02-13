@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Mi Libro" id="milibro_menu_root"/>
+        <menuitem name="Auxiliares" id="milibro_auxiliares" parent="milibro_menu_root"/>
+        <menuitem name="Libro" id="milibro.libros_tree" parent="milibro_auxiliares" action="milibro.libros_action_window"/>
+        <menuitem name="Autor" id="milibro.autores_tree" parent="milibro_auxiliares" action="milibro.autores_action_window"/>
+        <menuitem name="Editorial" id="milibro.editoriales_tree" parent="milibro_auxiliares" action="milibro.editoriales_action_window"/>
+        <menuitem name="Categoria" id="milibro.categorias_tree" parent="milibro_auxiliares" action="milibro.categorias_action_window"/>
+        <menuitem name="CDU" id="milibro.cdu_tree" parent="milibro_auxiliares" action="milibro.cdu_action_window"/>
+        <menuitem name="Ejemplar" id="milibro.ejemplar_tree" parent="milibro_auxiliares" action="milibro.ejemplares_action_window"/>
+        <menuitem name="Prestamo" id="milibro.prestamo_tree" parent="milibro_auxiliares" action="milibro.prestamos_action_window"/>
+
+    </data>
+</odoo>
