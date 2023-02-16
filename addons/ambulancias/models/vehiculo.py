@@ -10,6 +10,8 @@ class Vehiculo(models.Model):
     _description = 'Vehículos'
     _inherit = 'image.mixin'
 
+    borrar=fields.Char(string="Esto hay que borrarlo")
+
     name = fields.Char(string="Matrícula", unique=True, required=True)
     fecha_adquisicion = fields.Date(string="Fecha de adquisición", required=True)
     fecha_baja = fields.Date(string="Fecha de baja")
